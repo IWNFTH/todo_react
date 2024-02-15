@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./styles.css";
-import { InputTodos } from "./components/InputTodo";
+import { InputTodo } from "./components/InputTodo";
 import { IncompleteTodos } from "./components/IncompleteTodos";
 import { CompleteTodos } from "./components/CompleteTodos";
 
@@ -48,13 +48,21 @@ export const Todo = () => {
     setIncompleteTodos(newIncompleteTodos);
   };
 
+  const isMaxLimitIncompleteTodos = incompleteTodos.length >= 5;
+
   return (
     <>
-      <InputTodos 
+      <InputTodo 
         todoText={todoText} 
         onChange={onChangeTodoText} 
         onClick={onClickAdd} 
+        disabled={isMaxLimitIncompleteTodos}
       />
+      {isMaxLimitIncompleteTodos && (
+        <p style={{ color: "red" }}>
+          登録できるTODOは5個までです。消化してください。
+        </p>
+      )}
       <IncompleteTodos
         todos={incompleteTodos}
         onClickComplete={onClickComplete}

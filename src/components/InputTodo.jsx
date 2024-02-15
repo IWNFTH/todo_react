@@ -7,12 +7,12 @@ const style = {
   borderRadius: "8px"
 }
 
-export const InputTodos = (props) => {
-  const { todoText, onChange, onClick } = props;
+export const InputTodo = (props) => {
+  const { todoText, onChange, onClick, disabled } = props;
   return (
     <div style={style}>
-        <input placeholder="TODOを入力" value={todoText} onChange={onChange} />
-        <button onClick={onClick}>追加</button>
+        <input disabled={disabled} placeholder="TODOを入力" value={todoText} onChange={onChange} />
+        <button disabled={disabled} onClick={onClick}>追加</button>
       </div>
   )
 };
