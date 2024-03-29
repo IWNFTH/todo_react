@@ -63,15 +63,17 @@ export const Todo = () => {
           登録できるTODOは5個までです。消化してください。
         </p>
       )}
-      <IncompleteTodos
-        todos={incompleteTodos}
-        onClickComplete={onClickComplete}
-        onClickDelete={onClickDelete}
-      />
-      <CompleteTodos
-        todos={completeTodos}
-        onClickBack={onClickBack}
-      />
+      <div class="Todos">
+        <IncompleteTodos
+          todos={incompleteTodos}
+          onClickComplete={onClickComplete}
+          onClickDelete={onClickDelete}
+        />
+        <CompleteTodos
+          todos={completeTodos}
+          onClickBack={onClickBack}
+        />
+      </div>
     </>
   );
 }
