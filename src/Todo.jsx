@@ -7,12 +7,12 @@ import { CompleteTodos } from "./components/CompleteTodos";
 export const Todo = () => {
   const [todoText, setTodoText] = useState("");
   const [incompleteTodos, setIncompleteTodos] = useState([
-    "TODOです1", 
-    "TODOです2"
+    "TODO1", 
+    "TODO2"
   ]);
   const [completeTodos, setCompleteTodos] = useState([
-    "TODOでした1", 
-    "TODOでした2"
+    "TODO3", 
+    "TODO4"
   ]);
 
   const onChangeTodoText = (event) => setTodoText(event.target.value);
